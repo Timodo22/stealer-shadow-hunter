@@ -1,17 +1,8 @@
 
-import React, { useState } from 'react';
-import { ChevronDown, ChevronRight, Shield, Search, Lock, Eye, Server, AlertTriangle } from 'lucide-react';
+import React from 'react';
+import { Shield, Search, Lock, Eye, Server, AlertTriangle } from 'lucide-react';
 
 const Index = () => {
-  const [expandedSections, setExpandedSections] = useState<{ [key: string]: boolean }>({});
-
-  const toggleSection = (sectionId: string) => {
-    setExpandedSections(prev => ({
-      ...prev,
-      [sectionId]: !prev[sectionId]
-    }));
-  };
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       {/* Header */}
@@ -94,206 +85,174 @@ const Index = () => {
           
           {/* Research Question 1 */}
           <div className="mb-8">
-            <div 
-              className="bg-slate-800/50 backdrop-blur-sm rounded-xl border border-purple-500/20 p-6 cursor-pointer hover:bg-slate-800/70 transition-all"
-              onClick={() => toggleSection('patterns')}
-            >
-              <div className="flex items-center justify-between">
-                <h3 className="text-xl font-semibold text-purple-300">Welke patronen zijn te herkennen in bestaande stealer malware?</h3>
-                {expandedSections['patterns'] ? <ChevronDown className="h-5 w-5 text-purple-400" /> : <ChevronRight className="h-5 w-5 text-purple-400" />}
-              </div>
+            <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl border border-purple-500/20 p-6">
+              <h3 className="text-xl font-semibold text-purple-300 mb-4">Welke patronen zijn te herkennen in bestaande stealer malware?</h3>
               
-              {expandedSections['patterns'] && (
-                <div className="mt-6 space-y-4 text-purple-100">
-                  <p className="text-sm text-purple-300 font-medium">DOT: Field – analyse van bestaande malware</p>
+              <div className="space-y-4 text-purple-100">
+                <p className="text-sm text-purple-300 font-medium">DOT: Field – analyse van bestaande malware</p>
+                
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <h4 className="font-semibold text-purple-300 mb-3">Veelvoorkomende Patronen:</h4>
+                    <ul className="space-y-2">
+                      <li className="flex items-start"><span className="text-purple-400 mr-2">1.</span>Gebruik van bekende binaries (Living off the Land)</li>
+                      <li className="flex items-start"><span className="text-purple-400 mr-2">2.</span>Exfiltratie via standaardprotocollen</li>
+                      <li className="flex items-start"><span className="text-purple-400 mr-2">3.</span>Targeten van specifieke applicaties</li>
+                      <li className="flex items-start"><span className="text-purple-400 mr-2">4.</span>Minimalistische werking</li>
+                    </ul>
+                  </div>
                   
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <h4 className="font-semibold text-purple-300 mb-3">Veelvoorkomende Patronen:</h4>
-                      <ul className="space-y-2">
-                        <li className="flex items-start"><span className="text-purple-400 mr-2">1.</span>Gebruik van bekende binaries (Living off the Land)</li>
-                        <li className="flex items-start"><span className="text-purple-400 mr-2">2.</span>Exfiltratie via standaardprotocollen</li>
-                        <li className="flex items-start"><span className="text-purple-400 mr-2">3.</span>Targeten van specifieke applicaties</li>
-                        <li className="flex items-start"><span className="text-purple-400 mr-2">4.</span>Minimalistische werking</li>
-                      </ul>
-                    </div>
-                    
-                    <div>
-                      <h4 className="font-semibold text-purple-300 mb-3">Doelwitten:</h4>
-                      <ul className="space-y-2">
-                        <li className="flex items-start"><span className="text-purple-400 mr-2">•</span>Browsers: Chrome, Firefox, Edge</li>
-                        <li className="flex items-start"><span className="text-purple-400 mr-2">•</span>VPN- en RDP-software</li>
-                        <li className="flex items-start"><span className="text-purple-400 mr-2">•</span>Cryptowallets: Metamask, Exodus</li>
-                        <li className="flex items-start"><span className="text-purple-400 mr-2">•</span>Gaming platforms: Steam, Epic Games</li>
-                      </ul>
-                    </div>
+                  <div>
+                    <h4 className="font-semibold text-purple-300 mb-3">Doelwitten:</h4>
+                    <ul className="space-y-2">
+                      <li className="flex items-start"><span className="text-purple-400 mr-2">•</span>Browsers: Chrome, Firefox, Edge</li>
+                      <li className="flex items-start"><span className="text-purple-400 mr-2">•</span>VPN- en RDP-software</li>
+                      <li className="flex items-start"><span className="text-purple-400 mr-2">•</span>Cryptowallets: Metamask, Exodus</li>
+                      <li className="flex items-start"><span className="text-purple-400 mr-2">•</span>Gaming platforms: Steam, Epic Games</li>
+                    </ul>
                   </div>
                 </div>
-              )}
+              </div>
             </div>
           </div>
 
           {/* Research Question 2 */}
           <div className="mb-8">
-            <div 
-              className="bg-slate-800/50 backdrop-blur-sm rounded-xl border border-purple-500/20 p-6 cursor-pointer hover:bg-slate-800/70 transition-all"
-              onClick={() => toggleSection('working')}
-            >
-              <div className="flex items-center justify-between">
-                <h3 className="text-xl font-semibold text-purple-300">Hoe werkt stealer malware en welke technieken worden gebruikt?</h3>
-                {expandedSections['working'] ? <ChevronDown className="h-5 w-5 text-purple-400" /> : <ChevronRight className="h-5 w-5 text-purple-400" />}
-              </div>
+            <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl border border-purple-500/20 p-6">
+              <h3 className="text-xl font-semibold text-purple-300 mb-4">Hoe werkt stealer malware en welke technieken worden gebruikt?</h3>
               
-              {expandedSections['working'] && (
-                <div className="mt-6 space-y-4 text-purple-100">
-                  <p className="text-sm text-purple-300 font-medium">DOT: Lab – POC / Computer Simulation</p>
+              <div className="space-y-4 text-purple-100">
+                <p className="text-sm text-purple-300 font-medium">DOT: Lab – POC / Computer Simulation</p>
+                
+                <div className="bg-slate-900/50 rounded-lg p-6 border border-purple-500/30">
+                  <h4 className="font-semibold text-purple-300 mb-4">Proof of Concept: Microsoft Edge Password Extraction</h4>
                   
-                  <div className="bg-slate-900/50 rounded-lg p-6 border border-purple-500/30">
-                    <h4 className="font-semibold text-purple-300 mb-4">Proof of Concept: Microsoft Edge Password Extraction</h4>
+                  <div className="space-y-4">
+                    <div className="flex items-start space-x-3">
+                      <span className="bg-purple-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">1</span>
+                      <div>
+                        <h5 className="font-medium text-purple-200">Sleutel ophalen</h5>
+                        <p className="text-sm text-purple-100">Encryptiesleutel uit "Local State" bestand ophalen en ontsleutelen via DPAPI</p>
+                      </div>
+                    </div>
                     
-                    <div className="space-y-4">
-                      <div className="flex items-start space-x-3">
-                        <span className="bg-purple-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">1</span>
-                        <div>
-                          <h5 className="font-medium text-purple-200">Sleutel ophalen</h5>
-                          <p className="text-sm text-purple-100">Encryptiesleutel uit "Local State" bestand ophalen en ontsleutelen via DPAPI</p>
-                        </div>
+                    <div className="flex items-start space-x-3">
+                      <span className="bg-purple-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">2</span>
+                      <div>
+                        <h5 className="font-medium text-purple-200">Database kopiëren</h5>
+                        <p className="text-sm text-purple-100">SQLite-database "Login Data" kopiëren om toegangsfouten te voorkomen</p>
                       </div>
-                      
-                      <div className="flex items-start space-x-3">
-                        <span className="bg-purple-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">2</span>
-                        <div>
-                          <h5 className="font-medium text-purple-200">Database kopiëren</h5>
-                          <p className="text-sm text-purple-100">SQLite-database "Login Data" kopiëren om toegangsfouten te voorkomen</p>
-                        </div>
+                    </div>
+                    
+                    <div className="flex items-start space-x-3">
+                      <span className="bg-purple-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">3</span>
+                      <div>
+                        <h5 className="font-medium text-purple-200">Wachtwoorden ontsleutelen</h5>
+                        <p className="text-sm text-purple-100">AES-GCM decryptie gebruiken om versleutelde wachtwoorden leesbaar te maken</p>
                       </div>
-                      
-                      <div className="flex items-start space-x-3">
-                        <span className="bg-purple-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">3</span>
-                        <div>
-                          <h5 className="font-medium text-purple-200">Wachtwoorden ontsleutelen</h5>
-                          <p className="text-sm text-purple-100">AES-GCM decryptie gebruiken om versleutelde wachtwoorden leesbaar te maken</p>
-                        </div>
-                      </div>
-                      
-                      <div className="flex items-start space-x-3">
-                        <span className="bg-purple-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">4</span>
-                        <div>
-                          <h5 className="font-medium text-purple-200">Gegevens exfiltreren</h5>
-                          <p className="text-sm text-purple-100">Data versturen via HTTP, Telegram, Discord of email naar aanvaller</p>
-                        </div>
+                    </div>
+                    
+                    <div className="flex items-start space-x-3">
+                      <span className="bg-purple-500 text-white rounded-full w-6 h-6 flex items-center justify-center text-sm font-bold">4</span>
+                      <div>
+                        <h5 className="font-medium text-purple-200">Gegevens exfiltreren</h5>
+                        <p className="text-sm text-purple-100">Data versturen via HTTP, Telegram, Discord of email naar aanvaller</p>
                       </div>
                     </div>
                   </div>
                 </div>
-              )}
+              </div>
             </div>
           </div>
 
           {/* Research Question 3 */}
           <div className="mb-8">
-            <div 
-              className="bg-slate-800/50 backdrop-blur-sm rounded-xl border border-purple-500/20 p-6 cursor-pointer hover:bg-slate-800/70 transition-all"
-              onClick={() => toggleSection('detection')}
-            >
-              <div className="flex items-center justify-between">
-                <h3 className="text-xl font-semibold text-purple-300">Welke detectiemethoden kunnen worden toegepast?</h3>
-                {expandedSections['detection'] ? <ChevronDown className="h-5 w-5 text-purple-400" /> : <ChevronRight className="h-5 w-5 text-purple-400" />}
-              </div>
+            <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl border border-purple-500/20 p-6">
+              <h3 className="text-xl font-semibold text-purple-300 mb-4">Welke detectiemethoden kunnen worden toegepast?</h3>
               
-              {expandedSections['detection'] && (
-                <div className="mt-6 space-y-4 text-purple-100">
-                  <p className="text-sm text-purple-300 font-medium">DOT: Showroom – Vergelijkingen tussen EDR's</p>
-                  
-                  <div className="overflow-x-auto">
-                    <table className="w-full bg-slate-900/50 rounded-lg border border-purple-500/30">
-                      <thead>
-                        <tr className="border-b border-purple-500/30">
-                          <th className="text-left p-4 text-purple-300 font-semibold">EDR-oplossing</th>
-                          <th className="text-left p-4 text-purple-300 font-semibold">Sterke punten</th>
-                          <th className="text-left p-4 text-purple-300 font-semibold">Zwakke punten</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr className="border-b border-purple-500/20">
-                          <td className="p-4 font-medium text-purple-200">Microsoft Defender</td>
-                          <td className="p-4 text-sm">Windows integratie, DPAPI detectie</td>
-                          <td className="p-4 text-sm">Beperkt op non-Windows</td>
-                        </tr>
-                        <tr className="border-b border-purple-500/20">
-                          <td className="p-4 font-medium text-purple-200">CrowdStrike Falcon</td>
-                          <td className="p-4 text-sm">Cloud-based AI, script detectie</td>
-                          <td className="p-4 text-sm">Black box AI beslissingen</td>
-                        </tr>
-                        <tr className="border-b border-purple-500/20">
-                          <td className="p-4 font-medium text-purple-200">SentinelOne</td>
-                          <td className="p-4 text-sm">Autonome AI, automatische rollback</td>
-                          <td className="p-4 text-sm">False positives bij custom scripts</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
+              <div className="space-y-4 text-purple-100">
+                <p className="text-sm text-purple-300 font-medium">DOT: Showroom – Vergelijkingen tussen EDR's</p>
+                
+                <div className="overflow-x-auto">
+                  <table className="w-full bg-slate-900/50 rounded-lg border border-purple-500/30">
+                    <thead>
+                      <tr className="border-b border-purple-500/30">
+                        <th className="text-left p-4 text-purple-300 font-semibold">EDR-oplossing</th>
+                        <th className="text-left p-4 text-purple-300 font-semibold">Sterke punten</th>
+                        <th className="text-left p-4 text-purple-300 font-semibold">Zwakke punten</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="border-b border-purple-500/20">
+                        <td className="p-4 font-medium text-purple-200">Microsoft Defender</td>
+                        <td className="p-4 text-sm">Windows integratie, DPAPI detectie</td>
+                        <td className="p-4 text-sm">Beperkt op non-Windows</td>
+                      </tr>
+                      <tr className="border-b border-purple-500/20">
+                        <td className="p-4 font-medium text-purple-200">CrowdStrike Falcon</td>
+                        <td className="p-4 text-sm">Cloud-based AI, script detectie</td>
+                        <td className="p-4 text-sm">Black box AI beslissingen</td>
+                      </tr>
+                      <tr className="border-b border-purple-500/20">
+                        <td className="p-4 font-medium text-purple-200">SentinelOne</td>
+                        <td className="p-4 text-sm">Autonome AI, automatische rollback</td>
+                        <td className="p-4 text-sm">False positives bij custom scripts</td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
-              )}
+              </div>
             </div>
           </div>
 
           {/* Research Question 4 */}
           <div className="mb-8">
-            <div 
-              className="bg-slate-800/50 backdrop-blur-sm rounded-xl border border-purple-500/20 p-6 cursor-pointer hover:bg-slate-800/70 transition-all"
-              onClick={() => toggleSection('passwords')}
-            >
-              <div className="flex items-center justify-between">
-                <h3 className="text-xl font-semibold text-purple-300">Welke wachtwoordmanagers zijn "goed" voor preventieve maatregelen?</h3>
-                {expandedSections['passwords'] ? <ChevronDown className="h-5 w-5 text-purple-400" /> : <ChevronRight className="h-5 w-5 text-purple-400" />}
-              </div>
+            <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl border border-purple-500/20 p-6">
+              <h3 className="text-xl font-semibold text-purple-300 mb-4">Welke wachtwoordmanagers zijn "goed" voor preventieve maatregelen?</h3>
               
-              {expandedSections['passwords'] && (
-                <div className="mt-6 space-y-4 text-purple-100">
-                  <p className="text-sm text-purple-300 font-medium">DOT: Showroom – Vergelijkingen tussen password managers</p>
-                  
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div className="bg-green-900/30 rounded-lg p-6 border border-green-500/30">
-                      <div className="flex items-center mb-4">
-                        <Lock className="h-6 w-6 text-green-400 mr-2" />
-                        <h4 className="font-semibold text-green-300">Aanbevolen: MindYourPass</h4>
-                      </div>
-                      <ul className="space-y-2 text-sm">
-                        <li>✓ AES-256 encryptie + MFA</li>
-                        <li>✓ AVG/NIS2 compliant</li>
-                        <li>✓ SSO/AD integratie</li>
-                        <li>✓ Lokale aanbieder (Eindhoven)</li>
-                        <li>✓ €5,50 per maand</li>
-                        <li>✓ 0 security breaches</li>
-                      </ul>
+              <div className="space-y-4 text-purple-100">
+                <p className="text-sm text-purple-300 font-medium">DOT: Showroom – Vergelijkingen tussen password managers</p>
+                
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="bg-green-900/30 rounded-lg p-6 border border-green-500/30">
+                    <div className="flex items-center mb-4">
+                      <Lock className="h-6 w-6 text-green-400 mr-2" />
+                      <h4 className="font-semibold text-green-300">Aanbevolen: MindYourPass</h4>
                     </div>
-                    
-                    <div className="bg-blue-900/30 rounded-lg p-6 border border-blue-500/30">
-                      <div className="flex items-center mb-4">
-                        <Shield className="h-6 w-6 text-blue-400 mr-2" />
-                        <h4 className="font-semibold text-blue-300">Runner-up: NordPass</h4>
-                      </div>
-                      <ul className="space-y-2 text-sm">
-                        <li>✓ AES-256 encryptie + MFA</li>
-                        <li>✓ AVG/NIS2 compliant</li>
-                        <li>✓ SSO integratie</li>
-                        <li>✓ Gebruiksvriendelijk</li>
-                        <li>✓ €6,00 per maand</li>
-                        <li>✓ 0 security breaches</li>
-                      </ul>
-                    </div>
+                    <ul className="space-y-2 text-sm">
+                      <li>✓ AES-256 encryptie + MFA</li>
+                      <li>✓ AVG/NIS2 compliant</li>
+                      <li>✓ SSO/AD integratie</li>
+                      <li>✓ Lokale aanbieder (Eindhoven)</li>
+                      <li>✓ €5,50 per maand</li>
+                      <li>✓ 0 security breaches</li>
+                    </ul>
                   </div>
                   
-                  <div className="bg-red-900/30 rounded-lg p-4 border border-red-500/30">
-                    <div className="flex items-center mb-2">
-                      <AlertTriangle className="h-5 w-5 text-red-400 mr-2" />
-                      <h5 className="font-medium text-red-300">Te vermijden</h5>
+                  <div className="bg-blue-900/30 rounded-lg p-6 border border-blue-500/30">
+                    <div className="flex items-center mb-4">
+                      <Shield className="h-6 w-6 text-blue-400 mr-2" />
+                      <h4 className="font-semibold text-blue-300">Runner-up: NordPass</h4>
                     </div>
-                    <p className="text-sm text-red-100">LastPass (2 breaches), Bitwarden (3 breaches op één dag), Keeper (beperkte integratie)</p>
+                    <ul className="space-y-2 text-sm">
+                      <li>✓ AES-256 encryptie + MFA</li>
+                      <li>✓ AVG/NIS2 compliant</li>
+                      <li>✓ SSO integratie</li>
+                      <li>✓ Gebruiksvriendelijk</li>
+                      <li>✓ €6,00 per maand</li>
+                      <li>✓ 0 security breaches</li>
+                    </ul>
                   </div>
                 </div>
-              )}
+                
+                <div className="bg-red-900/30 rounded-lg p-4 border border-red-500/30">
+                  <div className="flex items-center mb-2">
+                    <AlertTriangle className="h-5 w-5 text-red-400 mr-2" />
+                    <h5 className="font-medium text-red-300">Te vermijden</h5>
+                  </div>
+                  <p className="text-sm text-red-100">LastPass (2 breaches), Bitwarden (3 breaches op één dag), Keeper (beperkte integratie)</p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
