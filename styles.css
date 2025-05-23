@@ -1,0 +1,495 @@
+
+/* Base Styles */
+:root {
+  --bg-color: #0f172a;
+  --text-color: #f8fafc;
+  --primary: #a78bfa;
+  --primary-dark: #8b5cf6;
+  --secondary: #60a5fa;
+  --accent: #f472b6;
+  --border-color: rgba(167, 139, 250, 0.2);
+  --card-bg: rgba(30, 41, 59, 0.5);
+  --green: #4ade80;
+  --green-bg: rgba(22, 101, 52, 0.3);
+  --blue: #60a5fa;
+  --blue-bg: rgba(30, 64, 175, 0.3);
+  --red: #f87171;
+  --red-bg: rgba(153, 27, 27, 0.3);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.bg-gradient {
+  background: linear-gradient(135deg, #0f172a 0%, #4c1d95 50%, #0f172a 100%);
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--text-color);
+}
+
+ul, ol {
+  list-style-position: inside;
+  margin-bottom: 1rem;
+}
+
+strong {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* Header Styles */
+.header {
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(4px);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo h1 {
+  font-size: 1.5rem;
+  margin-bottom: 0;
+}
+
+.nav {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .nav {
+    display: flex;
+    gap: 1.5rem;
+  }
+}
+
+/* Hero Section */
+.hero-section {
+  padding: 5rem 0;
+  text-align: center;
+}
+
+.hero-content {
+  margin-bottom: 2rem;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(to right, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-content h2 {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.125rem;
+  max-width: 48rem;
+  margin: 0 auto;
+  color: #d8b4fe;
+}
+
+.researcher-info {
+  color: #d8b4fe;
+}
+
+.researcher-info p {
+  margin-bottom: 0.5rem;
+}
+
+/* Main Content */
+.main-content {
+  padding-bottom: 5rem;
+}
+
+.content-section {
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.section-card {
+  background-color: var(--card-bg);
+  backdrop-filter: blur(4px);
+  border-radius: 0.75rem;
+  border: 1px solid var(--border-color);
+  padding: 2rem;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.section-header svg {
+  margin-right: 0.75rem;
+}
+
+.section-header h2 {
+  font-size: 1.875rem;
+  margin-bottom: 0;
+}
+
+/* Grid Layouts */
+.grid-2-cols,
+.grid-3-cols {
+  display: grid;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .grid-2-cols {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .grid-3-cols {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Bullet Lists */
+.bullet-list li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+  list-style-type: none;
+}
+
+.bullet-list li::before {
+  content: "•";
+  color: var(--primary);
+  margin-right: 0.5rem;
+}
+
+/* Numbered Lists */
+.numbered-list {
+  list-style-type: none;
+  counter-reset: item;
+}
+
+.numbered-list li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.numbered-list li::before {
+  counter-increment: item;
+  content: counter(item) ".";
+  color: var(--primary);
+  margin-right: 0.5rem;
+  font-weight: 600;
+}
+
+/* Question Blocks */
+.question-block {
+  margin-bottom: 2rem;
+}
+
+.question-card {
+  background-color: var(--card-bg);
+  border-radius: 0.75rem;
+  border: 1px solid var(--border-color);
+  padding: 1.5rem;
+}
+
+.question-card h3 {
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.question-content {
+  margin-top: 1rem;
+}
+
+.question-method {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+/* POC Card */
+.poc-card {
+  background-color: rgba(15, 23, 42, 0.5);
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-color);
+  padding: 1.5rem;
+}
+
+.poc-card h4 {
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.poc-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.poc-step {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.step-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: var(--primary);
+  color: white;
+  border-radius: 50%;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.poc-step h5 {
+  color: #d8b4fe;
+  margin-bottom: 0.25rem;
+}
+
+.poc-step p {
+  font-size: 0.875rem;
+}
+
+/* Comparison Table */
+.table-container {
+  overflow-x: auto;
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: rgba(15, 23, 42, 0.5);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+}
+
+.comparison-table th,
+.comparison-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.comparison-table th {
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.solution-name {
+  font-weight: 500;
+  color: var(--primary);
+}
+
+/* Recommended Cards */
+.recommended-card {
+  background-color: var(--card-bg);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  height: 100%;
+}
+
+.recommended-card.green {
+  background-color: var(--green-bg);
+  border: 1px solid var(--green);
+}
+
+.recommended-card.blue {
+  background-color: var(--blue-bg);
+  border: 1px solid var(--blue);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.recommended-card.green h4 {
+  color: var(--green);
+}
+
+.recommended-card.blue h4 {
+  color: var(--blue);
+}
+
+.check-list {
+  list-style-type: none;
+}
+
+.check-list li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.check-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+}
+
+/* Warning Card */
+.warning-card {
+  background-color: var(--red-bg);
+  border: 1px solid var(--red);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.warning-card h5 {
+  color: var(--red);
+  margin-bottom: 0.5rem;
+}
+
+/* Conclusion */
+.conclusion-card {
+  background: linear-gradient(to right, rgba(76, 29, 149, 0.5), rgba(219, 39, 119, 0.5));
+  backdrop-filter: blur(4px);
+  border-radius: 0.75rem;
+  border: 1px solid var(--border-color);
+  padding: 2rem;
+}
+
+.conclusion-text {
+  font-size: 1.125rem;
+  margin-bottom: 1.5rem;
+}
+
+.conclusion-item {
+  background-color: rgba(15, 23, 42, 0.5);
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-color);
+  padding: 1.5rem;
+  height: 100%;
+}
+
+.conclusion-item h4 {
+  color: var(--primary);
+  margin-bottom: 0.75rem;
+}
+
+/* Security Union */
+.security-union-content .larger-text {
+  font-size: 1.125rem;
+}
+
+.findings-card {
+  background-color: rgba(15, 23, 42, 0.5);
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-color);
+  padding: 1.5rem;
+  margin-top: 1rem;
+}
+
+.findings-card h4 {
+  color: var(--primary);
+  margin-bottom: 0.75rem;
+}
+
+/* Footer */
+.footer {
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  border-top: 1px solid var(--border-color);
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.footer p {
+  color: var(--primary);
+}
+
+.footer-subtitle {
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  color: #a1a1aa;
+}
+
+/* Responsive Adjustments */
+@media (min-width: 768px) {
+  .hero-content h1 {
+    font-size: 4rem;
+  }
+  
+  .hero-content h2 {
+    font-size: 2.25rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .section-card,
+  .question-card,
+  .conclusion-card {
+    padding: 1.25rem;
+  }
+  
+  .grid-2-cols,
+  .grid-3-cols {
+    grid-template-columns: 1fr;
+  }
+}

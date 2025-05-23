@@ -1,26 +1,339 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>stealer-shadow-hunter</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
+    <title>Stealer Malware - Detectie & Preventie Research</title>
+    <meta name="description" content="Een diepgaand onderzoek naar stealer malware, detectiemethoden en preventieve maatregelen" />
+    <meta name="author" content="Timo van der Steen" />
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 
-    <meta property="og:title" content="stealer-shadow-hunter" />
-    <meta property="og:description" content="Lovable Generated Project" />
+    <meta property="og:title" content="Stealer Malware Research" />
+    <meta property="og:description" content="Een diepgaand onderzoek naar stealer malware, detectiemethoden en preventieve maatregelen" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
   </head>
 
   <body>
-    <div id="root"></div>
-    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
+    <div class="min-h-screen bg-gradient">
+      <!-- Header -->
+      <header class="header">
+        <div class="container">
+          <div class="nav-container">
+            <div class="logo">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <h1>CyberSec Research</h1>
+            </div>
+            <nav class="nav">
+              <a href="#orientation">Oriëntatie</a>
+              <a href="#research">Onderzoek</a>
+              <a href="#conclusion">Conclusie</a>
+            </nav>
+          </div>
+        </div>
+      </header>
+
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <div class="container">
+          <div class="hero-content">
+            <h1 class="gradient-text">Stealer Malware</h1>
+            <h2>Detectie & Preventie Research</h2>
+            <p>
+              Een diepgaand onderzoek naar stealer malware, detectiemethoden en preventieve maatregelen 
+              om organisaties te beschermen tegen credential harvesting aanvallen.
+            </p>
+          </div>
+          <div class="researcher-info">
+            <p><strong>Onderzoeker:</strong> Timo van der Steen</p>
+            <p><strong>Periode:</strong> Semester 6</p>
+            <p><strong>Datum:</strong> 19/03/2024</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Main Content -->
+      <main class="container main-content">
+        
+        <!-- Orientation Section -->
+        <section id="orientation" class="content-section">
+          <div class="section-card">
+            <div class="section-header">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+              <h2>Oriëntatie</h2>
+            </div>
+            
+            <div class="grid-2-cols">
+              <div>
+                <h3>Trending Onderwerpen</h3>
+                <ul class="bullet-list">
+                  <li>AI-gedreven Cyberdreigingen</li>
+                  <li>Zero Trust Architectuur</li>
+                  <li>Quantum Computing Risico's</li>
+                  <li>Uitbreiding van het Aanvalsoppervlak</li>
+                </ul>
+              </div>
+              
+              <div>
+                <h3>State-of-the-Art Technologie</h3>
+                <ul class="bullet-list">
+                  <li>Extended Detection and Response (XDR)</li>
+                  <li>Automatisering en AI in Incident Response</li>
+                  <li>Threat Intelligence Platforms</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Research Questions -->
+        <section id="research" class="content-section">
+          <h2 class="section-title">Onderzoeksvragen</h2>
+          
+          <!-- Research Question 1 -->
+          <div class="question-block">
+            <div class="question-card">
+              <h3>Welke patronen zijn te herkennen in bestaande stealer malware?</h3>
+              
+              <div class="question-content">
+                <p class="question-method">DOT: Field – analyse van bestaande malware</p>
+                
+                <div class="grid-2-cols">
+                  <div>
+                    <h4>Veelvoorkomende Patronen:</h4>
+                    <ol class="numbered-list">
+                      <li>Gebruik van bekende binaries (Living off the Land)</li>
+                      <li>Exfiltratie via standaardprotocollen</li>
+                      <li>Targeten van specifieke applicaties</li>
+                      <li>Minimalistische werking</li>
+                    </ol>
+                  </div>
+                  
+                  <div>
+                    <h4>Doelwitten:</h4>
+                    <ul class="bullet-list">
+                      <li>Browsers: Chrome, Firefox, Edge</li>
+                      <li>VPN- en RDP-software</li>
+                      <li>Cryptowallets: Metamask, Exodus</li>
+                      <li>Gaming platforms: Steam, Epic Games</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Research Question 2 -->
+          <div class="question-block">
+            <div class="question-card">
+              <h3>Hoe werkt stealer malware en welke technieken worden gebruikt?</h3>
+              
+              <div class="question-content">
+                <p class="question-method">DOT: Lab – POC / Computer Simulation</p>
+                
+                <div class="poc-card">
+                  <h4>Proof of Concept: Microsoft Edge Password Extraction</h4>
+                  
+                  <div class="poc-steps">
+                    <div class="poc-step">
+                      <span class="step-number">1</span>
+                      <div>
+                        <h5>Sleutel ophalen</h5>
+                        <p>Encryptiesleutel uit "Local State" bestand ophalen en ontsleutelen via DPAPI</p>
+                      </div>
+                    </div>
+                    
+                    <div class="poc-step">
+                      <span class="step-number">2</span>
+                      <div>
+                        <h5>Database kopiëren</h5>
+                        <p>SQLite-database "Login Data" kopiëren om toegangsfouten te voorkomen</p>
+                      </div>
+                    </div>
+                    
+                    <div class="poc-step">
+                      <span class="step-number">3</span>
+                      <div>
+                        <h5>Wachtwoorden ontsleutelen</h5>
+                        <p>AES-GCM decryptie gebruiken om versleutelde wachtwoorden leesbaar te maken</p>
+                      </div>
+                    </div>
+                    
+                    <div class="poc-step">
+                      <span class="step-number">4</span>
+                      <div>
+                        <h5>Gegevens exfiltreren</h5>
+                        <p>Data versturen via HTTP, Telegram, Discord of email naar aanvaller</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Research Question 3 -->
+          <div class="question-block">
+            <div class="question-card">
+              <h3>Welke detectiemethoden kunnen worden toegepast?</h3>
+              
+              <div class="question-content">
+                <p class="question-method">DOT: Showroom – Vergelijkingen tussen EDR's</p>
+                
+                <div class="table-container">
+                  <table class="comparison-table">
+                    <thead>
+                      <tr>
+                        <th>EDR-oplossing</th>
+                        <th>Sterke punten</th>
+                        <th>Zwakke punten</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="solution-name">Microsoft Defender</td>
+                        <td>Windows integratie, DPAPI detectie</td>
+                        <td>Beperkt op non-Windows</td>
+                      </tr>
+                      <tr>
+                        <td class="solution-name">CrowdStrike Falcon</td>
+                        <td>Cloud-based AI, script detectie</td>
+                        <td>Black box AI beslissingen</td>
+                      </tr>
+                      <tr>
+                        <td class="solution-name">SentinelOne</td>
+                        <td>Autonome AI, automatische rollback</td>
+                        <td>False positives bij custom scripts</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Research Question 4 -->
+          <div class="question-block">
+            <div class="question-card">
+              <h3>Welke wachtwoordmanagers zijn "goed" voor preventieve maatregelen?</h3>
+              
+              <div class="question-content">
+                <p class="question-method">DOT: Showroom – Vergelijkingen tussen password managers</p>
+                
+                <div class="grid-2-cols">
+                  <div class="recommended-card green">
+                    <div class="card-header">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-lock"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                      <h4>Aanbevolen: MindYourPass</h4>
+                    </div>
+                    <ul class="check-list">
+                      <li>AES-256 encryptie + MFA</li>
+                      <li>AVG/NIS2 compliant</li>
+                      <li>SSO/AD integratie</li>
+                      <li>Lokale aanbieder (Eindhoven)</li>
+                      <li>€5,50 per maand</li>
+                      <li>0 security breaches</li>
+                    </ul>
+                  </div>
+                  
+                  <div class="recommended-card blue">
+                    <div class="card-header">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                      <h4>Runner-up: NordPass</h4>
+                    </div>
+                    <ul class="check-list">
+                      <li>AES-256 encryptie + MFA</li>
+                      <li>AVG/NIS2 compliant</li>
+                      <li>SSO integratie</li>
+                      <li>Gebruiksvriendelijk</li>
+                      <li>€6,00 per maand</li>
+                      <li>0 security breaches</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <div class="warning-card">
+                  <div class="card-header">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-alert-triangle"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+                    <h5>Te vermijden</h5>
+                  </div>
+                  <p>LastPass (2 breaches), Bitwarden (3 breaches op één dag), Keeper (beperkte integratie)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Conclusion -->
+        <section id="conclusion" class="content-section">
+          <div class="conclusion-card">
+            <div class="section-header">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+              <h2>Conclusie</h2>
+            </div>
+            
+            <div class="conclusion-content">
+              <p class="conclusion-text">
+                Dit onderzoek heeft aangetoond dat <strong>stealer malware een serieuze dreiging</strong> vormt 
+                voor organisaties vanwege de gerichte en vaak geavanceerde methoden waarmee gevoelige gegevens worden gestolen.
+              </p>
+              
+              <div class="grid-3-cols">
+                <div class="conclusion-item">
+                  <h4>Detectie</h4>
+                  <p>Technieken zoals obfuscatie en encryptie kunnen worden opgespoord door statische en dynamische analyse, gedragssignaturen en tooling zoals YARA.</p>
+                </div>
+                
+                <div class="conclusion-item">
+                  <h4>Preventie</h4>
+                  <p>Wachtwoordmanagers, MFA, en veilige netwerkconfiguraties dragen bij aan het verkleinen van het aanvalsoppervlak.</p>
+                </div>
+                
+                <div class="conclusion-item">
+                  <h4>Aanpak</h4>
+                  <p>Een proactieve beveiligingsaanpak waarin technische detectiemethoden, bewustwording en goede tooling hand in hand gaan.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Security Union Mention -->
+        <section class="content-section">
+          <div class="section-card">
+            <div class="section-header">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-server"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><line x1="6" x2="6.01" y1="6" y2="6"/><line x1="6" x2="6.01" y1="18" y2="18"/></svg>
+              <h2>Security Union Experience</h2>
+            </div>
+            
+            <div class="security-union-content">
+              <p class="larger-text">
+                Tijdens dit onderzoek heb ik ook ervaring opgedaan met <strong>Security Union</strong>, 
+                een krachtige SIEM-tool die realtime data analysis mogelijk maakt.
+              </p>
+              
+              <div class="findings-card">
+                <h4>Bevindingen:</h4>
+                <ul class="bullet-list">
+                  <li>Meeste DNS requests gingen naar ubuntu.com (updates) en fontysict.nl (school netwerk)</li>
+                  <li>TCP protocol wordt het vaakst gebruikt voor web traffic</li>
+                  <li>Enorme hoeveelheid data beschikbaar voor filtering en analyse</li>
+                  <li>Mogelijkheid voor custom queries per IP, regio, en poort</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="container">
+          <p>&copy; 2024 Timo van der Steen - Specialisatie Research Semester 6</p>
+          <p class="footer-subtitle">Cybersecurity Research - Stealer Malware Detection & Prevention</p>
+        </div>
+      </footer>
+    </div>
   </body>
 </html>
